@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geoff Mulberry</title>
+    <link>http://geoffmulberry.com/</link>
+    <description>Recent content on Geoff Mulberry</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jul 2023 10:40:14 -0400</lastBuildDate><atom:link href="http://geoffmulberry.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>http://geoffmulberry.com/articles/lorem-ipsum/lorem-ipsum/</link>
+      <pubDate>Thu, 27 Jul 2023 10:40:14 -0400</pubDate>
+      
+      <guid>http://geoffmulberry.com/articles/lorem-ipsum/lorem-ipsum/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel ligula et est sagittis aliquet. Morbi in purus placerat, tempor nisi id, malesuada enim. Sed commodo rhoncus odio, a feugiat enim tincidunt at. Nulla egestas, urna eu ullamcorper placerat, quam orci varius dui, ut tristique magna dolor at mauris. Sed porta sapien vitae cursus sollicitudin. Integer sed fringilla tellus, eget rutrum risus. Ut pellentesque fringilla magna. Sed ut mi eget enim gravida auctor ultrices quis arcu.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://geoffmulberry.com/about/</link>
+      <pubDate>Wed, 26 Jul 2023 15:17:10 -0400</pubDate>
+      
+      <guid>http://geoffmulberry.com/about/</guid>
+      <description>Welcome to my website! I&amp;rsquo;ll post articles about things that I find interesting, mostly related to electronics but may eventually get into other areas.</description>
+    </item>
+    
+  </channel>
+</rss>
