@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZBHTLS3PJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PZBHTLS3PJ');
+  </script>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+    
+    
+      <link href="/css/fonts.css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+  <title>Pi Is Rational?</title>
+
+  
+  
+  <link rel="stylesheet" href="/css/hugo-octopress.css">
+
+  
+  
+
+  
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+  
+
+  
+  
+    <link href="http://geoffmulberry.com/favicon.png" rel="icon">
+  
+
+  
+  
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="">
+  <meta name="author" content="Geoffrey Mulberry">
+
+  
+  <meta name="generator" content="Hugo 0.145.0">
+
+  
+  
+
+  
+  
+
+
+
+  
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { scale: 0.9 }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</head>
+
+<body>
+
+
+<header role="banner">
+<hgroup>
+  
+  <h1><a href="http://geoffmulberry.com/">Geoff Mulberry</a></h1>
+    <h2>Ph.D. in Electrical Engineering</h2>
+</hgroup></header>
+
+
+<nav role="navigation">
+<fieldset class="mobile-nav">
+  
+  <select onchange="location = this.value;">
+    <option value="">Navigate…</option>
+      
+        <option value="http://geoffmulberry.com/">» Home</option>
+      
+        <option value="http://geoffmulberry.com/about">» About</option>
+      
+        <option value="http://geoffmulberry.com/articles">» Articles</option>
+      
+  </select>
+</fieldset>
+
+
+<ul class="main-navigation">
+  
+  
+    <li><a href="http://geoffmulberry.com/" title="Home">Home</a></li>
+  
+    <li><a href="http://geoffmulberry.com/about" title="About">About</a></li>
+  
+    <li><a href="http://geoffmulberry.com/articles" title="Articles">Articles</a></li>
+  
+</ul>
+
+<ul class="subscription">
+  
+    
+        <a href="http://geoffmulberry.com/index.xml" target="_blank" type="application/rss+xml" title="RSS" rel="noopener noreferrer"><i class="fa fa-rss-square fa-lg"></i></a>
+    
+  
+</ul>
+
+
+  <form action="https://www.google.com/search" method="get" target="_blank" rel="noopener noreferrer">
+    <fieldset role="search">
+      <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+      <input type="hidden" name="q" value="site:http://geoffmulberry.com/" />
+    </fieldset>
+  </form>
+
+</nav>
+
+
+<div id="main">
+  <div id="content">
+    <div>
+      <article class="hentry" role="article">
+
+        
+        
+
+<header>
+  <p class="meta">Mar 13, 2025
+     - 6 minute read 
+    
+
+    
+  </p>
+  <h1 class="entry-title">
+     Pi Is Rational? 
+  </h1>
+</header>
+
+
+        <div class="entry-content">
+          
+          
+          
+          <h1 id="approximations">Approximations</h1>
+<p>It is almost 
+<a href="https://en.wikipedia.org/wiki/Pi_Day" target="_blank" rel="noopener">Pi Day</a>, the celebration of everyone&rsquo;s favorite 
+<a href="https://en.wikipedia.org/wiki/Irrational_number" target="_blank" rel="noopener">irrational</a> number, as well as my birthday. To celebrate, I was messing around with some code that would generate closer and closer 
+<a href="https://en.wikipedia.org/wiki/Rational_number" target="_blank" rel="noopener">rational</a> approximations of pi. I originally set the while loop to run forever just to watch more results come in until I felt like stopping it, but noticed something interesting. Once it got to the 180th approximation, the error dropped to 0.0. This means that according to python, there is absolutely no difference between $\frac{245850922}{78256779}$ and pi itself. Pi is rational after all! Of course, this isn&rsquo;t true. What is actually happening is that the value of pi that I am comparing my approximation to: math.pi from python&rsquo;s 
+<a href="https://docs.python.org/3/library/math.html" target="_blank" rel="noopener">math</a> library, is only an approximation itself. It is represented by an 
+<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a> double-precision binary floating-point number, AKA a double. Doubles are only capable of storing about 15 or so decimal digits, which my approximation achieves. When including math.pi in the standard library, they get as close as possible within the limits of an IEEE 754 double to the true value with the approximation <code>3.141592653589793</code>.</p>
+<h1 id="the-code">The code</h1>
+<p>Here is the python code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 1</span><span><span style="color:#719e07">import</span> math
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 2</span><span>denominator <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 3</span><span>numerator <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 4</span><span>bestError <span style="color:#719e07">=</span> <span style="color:#2aa198">100</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 5</span><span>numApproximations <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 6</span><span><span style="color:#719e07">while</span> numApproximations <span style="color:#719e07">&lt;</span> <span style="color:#2aa198">180</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 7</span><span>    approximation <span style="color:#719e07">=</span> numerator <span style="color:#719e07">/</span> denominator 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 8</span><span>    error <span style="color:#719e07">=</span> approximation <span style="color:#719e07">-</span> math<span style="color:#719e07">.</span>pi
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050"> 9</span><span>    <span style="color:#719e07">if</span> <span style="color:#b58900">abs</span>(error) <span style="color:#719e07">&lt;</span> <span style="color:#b58900">abs</span>(bestError):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">10</span><span>        numApproximations <span style="color:#719e07">+=</span> <span style="color:#2aa198">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">11</span><span>        bestError <span style="color:#719e07">=</span> error
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">12</span><span>        <span style="color:#b58900">print</span>(numApproximations, numerator, denominator, approximation, error)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">13</span><span>    <span style="color:#719e07">if</span> error <span style="color:#719e07">&lt;</span> <span style="color:#2aa198">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">14</span><span>        numerator <span style="color:#719e07">+=</span> <span style="color:#2aa198">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">15</span><span>    <span style="color:#719e07">else</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#495050">16</span><span>        denominator <span style="color:#719e07">+=</span> <span style="color:#2aa198">1</span>
+</span></span></code></pre></div><p>And for those who don&rsquo;t want to run it here is the full output, with all 180 integer approximations of pi:</p>
+<pre tabindex="0"><code>1 1 1 1.0 -2.141592653589793
+2 2 1 2.0 -1.1415926535897931
+3 3 1 3.0 -0.14159265358979312
+4 13 4 3.25 0.10840734641020688
+5 16 5 3.2 0.05840734641020706
+6 19 6 3.1666666666666665 0.025074013076873403
+7 22 7 3.142857142857143 0.0012644892673496777
+8 179 57 3.1403508771929824 -0.0012417763968106676
+9 201 64 3.140625 -0.000967653589793116
+10 223 71 3.140845070422535 -0.0007475831672580924
+11 245 78 3.141025641025641 -0.0005670125641521473
+12 267 85 3.1411764705882352 -0.00041618300155787935
+13 289 92 3.141304347826087 -0.0002883057637061981
+14 311 99 3.1414141414141414 -0.00017851217565167943
+15 333 106 3.141509433962264 -8.32196275291075e-05
+16 355 113 3.1415929203539825 2.667641894049666e-07
+17 52163 16604 3.141592387376536 -2.662132572162079e-07
+18 52518 16717 3.1415923909792425 -2.6261055063869776e-07
+19 52873 16830 3.141592394533571 -2.5905622225153024e-07
+20 53228 16943 3.1415923980404887 -2.555493043843171e-07
+21 53583 17056 3.141592401500938 -2.5208885512384427e-07
+22 53938 17169 3.1415924049158366 -2.4867395653771496e-07
+23 54293 17282 3.141592408286078 -2.4530371511843896e-07
+24 54648 17395 3.141592411612532 -2.419772608952542e-07
+25 55003 17508 3.1415924148960475 -2.386937456577698e-07
+26 55358 17621 3.1415924181374497 -2.354523434000555e-07
+27 55713 17734 3.1415924213375437 -2.3225224943246303e-07
+28 56068 17847 3.1415924244971145 -2.2909267860526938e-07
+29 56423 17960 3.1415924276169265 -2.259728666409444e-07
+30 56778 18073 3.141592430697726 -2.2289206702552633e-07
+31 57133 18186 3.14159243374024 -2.1984955322906785e-07
+32 57488 18299 3.1415924367451775 -2.1684461559701163e-07
+33 57843 18412 3.1415924397132304 -2.1387656268245792e-07
+34 58198 18525 3.141592442645074 -2.1094471902571854e-07
+35 58553 18638 3.141592445541367 -2.080484260424953e-07
+36 58908 18751 3.141592448402752 -2.0518704113570152e-07
+37 59263 18864 3.141592451229856 -2.023599372513729e-07
+38 59618 18977 3.1415924540232916 -1.9956650154639988e-07
+39 59973 19090 3.1415924567836564 -1.9680613672079517e-07
+40 60328 19203 3.1415924595115348 -1.9407825835315862e-07
+41 60683 19316 3.1415924622074964 -1.91382296677034e-07
+42 61038 19429 3.1415924648720983 -1.8871769480455214e-07
+43 61393 19542 3.141592467505885 -1.8608390828234178e-07
+44 61748 19655 3.141592470109387 -1.8348040597970794e-07
+45 62103 19768 3.1415924726831244 -1.809066687563643e-07
+46 62458 19881 3.141592475227604 -1.78362189018344e-07
+47 62813 19994 3.141592477743323 -1.7584647027391043e-07
+48 63168 20107 3.1415924802307655 -1.7335902757764643e-07
+49 63523 20220 3.1415924826904056 -1.708993875304543e-07
+50 63878 20333 3.141592485122707 -1.6846708605910976e-07
+51 64233 20446 3.141592487528123 -1.6606167019261875e-07
+52 64588 20559 3.141592489907097 -1.6368269628586063e-07
+53 64943 20672 3.1415924922600618 -1.613297313518558e-07
+54 65298 20785 3.1415924945874427 -1.5900235039723043e-07
+55 65653 20898 3.1415924968896545 -1.5670013864266252e-07
+56 66008 21011 3.141592499167103 -1.5442269019061428e-07
+57 66363 21124 3.1415925014201855 -1.5216960758124287e-07
+58 66718 21237 3.1415925036492913 -1.4994050179240048e-07
+59 67073 21350 3.141592505854801 -1.4773499223963427e-07
+60 67428 21463 3.1415925080370872 -1.4555270588800795e-07
+61 67783 21576 3.1415925101965145 -1.4339327858436945e-07
+62 68138 21689 3.1415925123334407 -1.4125635239281564e-07
+63 68493 21802 3.1415925144482157 -1.3914157737104915e-07
+64 68848 21915 3.141592516541182 -1.370486111262892e-07
+65 69203 22028 3.1415925186126747 -1.3497711837118231e-07
+66 69558 22141 3.1415925206630235 -1.3292676959153482e-07
+67 69913 22254 3.14159252269255 -1.3089724326675878e-07
+68 70268 22367 3.1415925247015695 -1.2888822364942598e-07
+69 70623 22480 3.1415925266903915 -1.2689940165344638e-07
+70 70978 22593 3.141592528659319 -1.2493047396588963e-07
+71 71333 22706 3.1415925306086496 -1.2298114349107436e-07
+72 71688 22819 3.1415925325386738 -1.2105111935056811e-07
+73 72043 22932 3.141592534449677 -1.1914011599500895e-07
+74 72398 23045 3.1415925363419395 -1.1724785364819468e-07
+75 72753 23158 3.1415925382157353 -1.153740578629936e-07
+76 73108 23271 3.1415925400713336 -1.1351845952134454e-07
+77 73463 23384 3.1415925419089974 -1.1168079572243528e-07
+78 73818 23497 3.141592543728987 -1.0986080622998884e-07
+79 74173 23610 3.1415925455315543 -1.0805823880133403e-07
+80 74528 23723 3.1415925473169497 -1.062728434142457e-07
+81 74883 23836 3.141592549085417 -1.0450437626374764e-07
+82 75238 23949 3.1415925508371956 -1.0275259754166655e-07
+83 75593 24062 3.141592552572521 -1.0101727232481039e-07
+84 75948 24175 3.1415925542916234 -9.929816968679006e-08
+85 76303 24288 3.14159255599473 -9.759506314210853e-08
+86 76658 24401 3.141592557682062 -9.590773109025008e-08
+87 77013 24514 3.1415925593538385 -9.423595459523426e-08
+88 77368 24627 3.141592561010273 -9.257952005015113e-08
+89 77723 24740 3.1415925626515766 -9.093821651262601e-08
+90 78078 24853 3.1415925642779543 -8.931183881344396e-08
+91 78433 24966 3.14159256588961 -8.770018311565764e-08
+92 78788 25079 3.1415925674867418 -8.610305135547947e-08
+93 79143 25192 3.141592569069546 -8.452024724547869e-08
+94 79498 25305 3.1415925706382137 -8.295157938320585e-08
+95 79853 25418 3.141592572192934 -8.139685903074678e-08
+96 80208 25531 3.141592573733892 -7.985590100290096e-08
+97 80563 25644 3.14159257526127 -7.832852322309236e-08
+98 80918 25757 3.1415925767752455 -7.681454761154782e-08
+99 81273 25870 3.1415925782759953 -7.531379786485104e-08
+100 81628 25983 3.1415925797636914 -7.382610167638859e-08
+101 81983 26096 3.141592581238504 -7.23512889599931e-08
+102 82338 26209 3.141592582700599 -7.08891940703893e-08
+103 82693 26322 3.1415925841501404 -6.943965269456953e-08
+104 83048 26435 3.1415925855872895 -6.800250362815063e-08
+105 83403 26548 3.1415925870122043 -6.65775887753739e-08
+106 83758 26661 3.1415925884250404 -6.516475270501587e-08
+107 84113 26774 3.1415925898259505 -6.376384265038837e-08
+108 84468 26887 3.1415925912150855 -6.237470762116004e-08
+109 84823 27000 3.1415925925925925 -6.099720062380243e-08
+110 85178 27113 3.1415925939586176 -5.963117555296549e-08
+111 85533 27226 3.1415925953133033 -5.827648985601286e-08
+112 85888 27339 3.141592596656791 -5.693300231257581e-08
+113 86243 27452 3.1415925979892174 -5.5600575699088495e-08
+114 86598 27565 3.1415925993107203 -5.427907279198507e-08
+115 86953 27678 3.1415926006214323 -5.29683608085918e-08
+116 87308 27791 3.1415926019214853 -5.166830785441334e-08
+117 87663 27904 3.1415926032110093 -5.037878381131122e-08
+118 88018 28017 3.141592604490131 -4.909966211386063e-08
+119 88373 28130 3.141592605758976 -4.783081708481518e-08
+120 88728 28243 3.1415926070176683 -4.657212482328532e-08
+121 89083 28356 3.141592608266328 -4.5323464981095185e-08
+122 89438 28469 3.141592609505076 -4.40847172100689e-08
+123 89793 28582 3.1415926107340284 -4.285576471474428e-08
+124 90148 28695 3.141592611953302 -4.1636491143748344e-08
+125 90503 28808 3.1415926131630103 -4.042678281024337e-08
+126 90858 28921 3.1415926143632653 -3.922652780374847e-08
+127 91213 29034 3.141592615554178 -3.8035615101961184e-08
+128 91568 29147 3.1415926167358563 -3.685393679120352e-08
+129 91923 29260 3.1415926179084073 -3.568138584597591e-08
+130 92278 29373 3.141592619071937 -3.451785612895719e-08
+131 92633 29486 3.141592620226548 -3.336324505553989e-08
+132 92988 29599 3.1415926213723435 -3.2217449597027326e-08
+133 93343 29712 3.1415926225094237 -3.108036938925807e-08
+134 93698 29825 3.1415926236378877 -2.995190540033832e-08
+135 94053 29938 3.1415926247578327 -2.8831960374731125e-08
+136 94408 30051 3.1415926258693556 -2.7720437500988737e-08
+137 94763 30164 3.14159262697255 -2.6617243076287878e-08
+138 95118 30277 3.14159262806751 -2.5522282953716058e-08
+139 95473 30390 3.141592629154327 -2.443546609498526e-08
+140 95828 30503 3.1415926302330917 -2.335670146180746e-08
+141 96183 30616 3.1415926313038933 -2.2285899792251485e-08
+142 96538 30729 3.1415926323668195 -2.122297360074299e-08
+143 96893 30842 3.1415926334219573 -2.0167835845796844e-08
+144 97248 30955 3.141592634469391 -1.9120402150463178e-08
+145 97603 31068 3.1415926355092054 -1.808058769370291e-08
+146 97958 31181 3.1415926365414837 -1.7048309430833797e-08
+147 98313 31294 3.1415926375663066 -1.6023486537619647e-08
+148 98668 31407 3.1415926385837554 -1.5006037745735057e-08
+149 99023 31520 3.1415926395939087 -1.3995884451389884e-08
+150 99378 31633 3.141592640596845 -1.2992948050793984e-08
+151 99733 31746 3.1415926415926414 -1.1997151716514054e-08
+152 100088 31859 3.141592642581374 -1.1008419065205999e-08
+153 100443 31972 3.1415926435631176 -1.0026675489882564e-08
+154 100798 32085 3.1415926445379463 -9.051846827645704e-09
+155 101153 32198 3.141592645505932 -8.083861136043424e-09
+156 101508 32311 3.1415926464671475 -7.1226455844453085e-09
+157 101863 32424 3.141592647421663 -6.168130006756201e-09
+158 102218 32537 3.1415926483695484 -5.220244680970154e-09
+159 102573 32650 3.141592649310873 -4.2789203291704325e-09
+160 102928 32763 3.141592650245704 -3.3440890057079287e-09
+161 103283 32876 3.1415926511741086 -2.415684541290375e-09
+162 103638 32989 3.1415926520961532 -1.493639878447084e-09
+163 103993 33102 3.1415926530119025 -5.778906242426274e-10
+164 104348 33215 3.141592653921421 3.3162805834763276e-10
+165 208341 66317 3.1415926534674368 -1.2235634727630895e-10
+166 312689 99532 3.1415926536189365 2.914335439641036e-11
+167 833719 265381 3.141592653581078 -8.715250743307479e-12
+168 1146408 364913 3.141592653591404 1.6107115641261771e-12
+169 3126535 995207 3.1415926535886505 -1.1426415369442111e-12
+170 4272943 1360120 3.141592653589389 -4.04121180963557e-13
+171 5419351 1725033 3.1415926535898153 2.220446049250313e-14
+172 42208400 13435351 3.1415926535897722 -2.0872192862952943e-14
+173 47627751 15160384 3.141592653589777 -1.5987211554602254e-14
+174 53047102 16885417 3.141592653589781 -1.199040866595169e-14
+175 58466453 18610450 3.1415926535897842 -8.881784197001252e-15
+176 63885804 20335483 3.141592653589787 -6.217248937900877e-15
+177 69305155 22060516 3.141592653589789 -3.9968028886505635e-15
+178 74724506 23785549 3.141592653589791 -2.220446049250313e-15
+179 80143857 25510582 3.1415926535897927 -4.440892098500626e-16
+180 245850922 78256779 3.141592653589793 0.0
+</code></pre>
+        </div>
+        
+
+<footer>
+  <p class="meta">
+    <span class="byline author vcard">Posted by <span class="fn">Geoffrey Mulberry</span></span>
+    
+    <time>Mar 13, 2025</time>
+    
+    </span>
+  </p>
+
+  
+
+  <p class="meta">
+    
+        <a class="basic-alignment left" href="http://geoffmulberry.com/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/" title="Inside a Vacuum Tube">Inside a Vacuum Tube</a>
+    
+
+    
+  </p>
+  
+</footer>
+
+      </article>
+    </div>
+    
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    
+      <h1>External Links</h1>
+    
+
+    <p>
+      
+    </p>
+  </section>
+
+  
+  
+
+
+
+<ul class="sidebar-nav">
+  <li class="sidebar-nav-item">
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/gmulberry" title="https://github.com/gmulberry"><i class="fa fa-github fa-3x"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/GRM_PHD" title="https://twitter.com/GRM_PHD"><i class="fa fa-twitter fa-3x"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/geoffrey-mulberry" title="https://www.linkedin.com/in/geoffrey-mulberry"><i class="fa fa-linkedin fa-3x"></i></a>
+    
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/gmulberry/" title="https://www.instagram.com/gmulberry/"><i class="fa fa-instagram fa-3x"></i></a>
+    
+
+  
+  
+  </li>
+</ul>
+
+  
+
+  
+
+  
+  
+  
+    
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          
+          
+            
+              <li class="post">
+                <a href="/articles/pi-is-rational/pi-is-rational/">Pi Is Rational?</a>
+              </li>
+            
+          
+            
+              <li class="post">
+                <a href="/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/">Inside a Vacuum Tube</a>
+              </li>
+            
+          
+        </ul>
+      </section>
+    
+  
+</aside>
+
+  </div>
+</div>
+
+    <footer role="contentinfo">
+      <p>Copyright &copy; 2025 Geoffrey Mulberry
+      </p>
+    </footer>
+
+    
+    
+
+
+
+    
+    
+    
+
+    
+  </body>
+</html>
+
