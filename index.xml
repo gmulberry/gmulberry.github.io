@@ -2,31 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Geoff Mulberry</title>
-    <link>http://geoffmulberry.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Geoff Mulberry</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Mar 2025 20:43:58 -0400</lastBuildDate>
-    <atom:link href="http://geoffmulberry.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Mar 2025 17:56:21 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/research/</link>
+      <pubDate>Sat, 29 Mar 2025 17:56:21 -0400</pubDate>
+      <guid>http://localhost:1313/research/</guid>
+      <description>&lt;h1 id=&#34;phd-dissertation&#34;&gt;Ph.D. Dissertation&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mulberry, Geoffrey&lt;/strong&gt;, &amp;ldquo;Development of a Dual-Mode CMOS Microelectrode Array for the Simultaneous Study of Electrochemical and Electrophysiological Activities of the Brain&amp;rdquo; (2022). &lt;em&gt;Electronic Theses and Dissertations, 2020-2023&lt;/em&gt;. 1621.&#xA;&#xD;&#xA;&lt;a href=&#34;https://stars.library.ucf.edu/etd2020/1621&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stars.library.ucf.edu/etd2020/1621&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;publications&#34;&gt;Publications&lt;/h1&gt;&#xA;&lt;h2 id=&#34;papers&#34;&gt;Papers&lt;/h2&gt;&#xA;&lt;h3 id=&#34;2022&#34;&gt;2022&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;G. Mulberry&lt;/strong&gt;, K. White, M. Crocker, and B. Kim, “A 512-Ch Dual-Mode Microchip for Simultaneous Measurements of Electrophysiological and Neurochemical Activities,” &lt;em&gt;Biosensors&lt;/em&gt;, vol. 13, no. 5, p. 502, Apr. 2023, doi: &#xD;&#xA;&lt;a href=&#34;https://doi.org/10.3390/bios13050502&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.3390/bios13050502&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;2020&#34;&gt;2020&lt;/h3&gt;&#xA;&lt;p&gt;K. A. White, &lt;strong&gt;G. Mulberry&lt;/strong&gt;, and B. N. Kim, “Parallel 1024-ch Cyclic Voltammetry on Monolithic CMOS Electrochemical Detector Array,” &lt;em&gt;IEEE Sensors Journal&lt;/em&gt;, vol. 20, no. 8, pp. 4395–4402, Apr. 2020, doi: &#xD;&#xA;&lt;a href=&#34;https://doi.org/10.1109/JSEN.2019.2961809&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1109/JSEN.2019.2961809&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Pi Is Rational?</title>
-      <link>http://geoffmulberry.com/articles/pi-is-rational/pi-is-rational/</link>
+      <link>http://localhost:1313/articles/pi-is-rational/pi-is-rational/</link>
       <pubDate>Thu, 13 Mar 2025 20:43:58 -0400</pubDate>
-      <guid>http://geoffmulberry.com/articles/pi-is-rational/pi-is-rational/</guid>
+      <guid>http://localhost:1313/articles/pi-is-rational/pi-is-rational/</guid>
       <description>&lt;h1 id=&#34;approximations&#34;&gt;Approximations&lt;/h1&gt;&#xA;&lt;p&gt;It is almost &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Pi_Day&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pi Day&lt;/a&gt;, the celebration of everyone&amp;rsquo;s favorite &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Irrational_number&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;irrational&lt;/a&gt; number, as well as my birthday. To celebrate, I was messing around with some code that would generate closer and closer &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rational_number&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rational&lt;/a&gt; approximations of pi. I originally set the while loop to run forever just to watch more results come in until I felt like stopping it, but noticed something interesting. Once it got to the 180th approximation, the error dropped to 0.0. This means that according to python, there is absolutely no difference between $\frac{245850922}{78256779}$ and pi itself. Pi is rational after all! Of course, this isn&amp;rsquo;t true. What is actually happening is that the value of pi that I am comparing my approximation to: math.pi from python&amp;rsquo;s &#xD;&#xA;&lt;a href=&#34;https://docs.python.org/3/library/math.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;math&lt;/a&gt; library, is only an approximation itself. It is represented by an &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/IEEE_754&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IEEE 754&lt;/a&gt; double-precision binary floating-point number, AKA a double. Doubles are only capable of storing about 15 or so decimal digits, which my approximation achieves. When including math.pi in the standard library, they get as close as possible within the limits of an IEEE 754 double to the true value with the approximation &lt;code&gt;3.141592653589793&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Inside a Vacuum Tube</title>
-      <link>http://geoffmulberry.com/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</link>
+      <link>http://localhost:1313/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</link>
       <pubDate>Fri, 28 Jul 2023 14:48:00 -0400</pubDate>
-      <guid>http://geoffmulberry.com/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</guid>
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;span class=&#34;caption-wrapper&#34;&gt;&#xD;&#xA;  &lt;img class=&#34;caption&#34; src=&#34;http://geoffmulberry.com/articles/inside-a-vacuum-tube/holding-tube.JPG&#34; title=&#34;A Sovtek EL84 power pentode tube&#34; alt=&#34;A Sovtek EL84 power pentode tube&#34;&gt;&#xD;&#xA;  &lt;span class=&#34;caption-text&#34;&gt;A Sovtek EL84 power pentode tube&lt;/span&gt;&#xD;&#xA;&lt;/span&gt;&#xD;&#xA;&#xA;I was working on my Vox &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Vox_AC30&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AC30&lt;/a&gt; clone that I built in high school, around 2009-2010, trying to figure out why I always had an oscillation issue when I turned the master volume up too far. Investigating the power amp side of the circuit revealed that I had incorrectly connected some of the grid-stopper resistors. I removed the tubes from the sockets so I could solder on the socket terminals without risking any damage to the tubes while they were in place, only to realize that the tubes were so stuck in their sockets that 2 of the 4 tubes cracked in their base. This caused a fatal problem for a vacuum tube: air ingress. So realizing that the tubes were ruined, I ordered a new matched quad, sockets, and got to work rewiring the power amp. While I was doing this, I thought that it would be interesting to take apart one of the tubes and document the process.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;span class=&#34;caption-wrapper&#34;&gt;&#xD;&#xA;  &lt;img class=&#34;caption&#34; src=&#34;http://localhost:1313/articles/inside-a-vacuum-tube/holding-tube.JPG&#34; title=&#34;A Sovtek EL84 power pentode tube&#34; alt=&#34;A Sovtek EL84 power pentode tube&#34;&gt;&#xD;&#xA;  &lt;span class=&#34;caption-text&#34;&gt;A Sovtek EL84 power pentode tube&lt;/span&gt;&#xD;&#xA;&lt;/span&gt;&#xD;&#xA;&#xA;I was working on my Vox &#xD;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Vox_AC30&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AC30&lt;/a&gt; clone that I built in high school, around 2009-2010, trying to figure out why I always had an oscillation issue when I turned the master volume up too far. Investigating the power amp side of the circuit revealed that I had incorrectly connected some of the grid-stopper resistors. I removed the tubes from the sockets so I could solder on the socket terminals without risking any damage to the tubes while they were in place, only to realize that the tubes were so stuck in their sockets that 2 of the 4 tubes cracked in their base. This caused a fatal problem for a vacuum tube: air ingress. So realizing that the tubes were ruined, I ordered a new matched quad, sockets, and got to work rewiring the power amp. While I was doing this, I thought that it would be interesting to take apart one of the tubes and document the process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://geoffmulberry.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 26 Jul 2023 15:17:10 -0400</pubDate>
-      <guid>http://geoffmulberry.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Welcome to my website! I&amp;rsquo;ll post articles about things that I find interesting, mostly related to electronics but may eventually get into other areas.&lt;/p&gt;</description>
     </item>
   </channel>
