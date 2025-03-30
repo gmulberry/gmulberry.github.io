@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://geoffmulberry.com/</loc>
     <lastmod>2025-03-29T17:56:21-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/</loc>
+    <loc>http://geoffmulberry.com/research/</loc>
     <lastmod>2025-03-29T17:56:21-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>http://geoffmulberry.com/articles/</loc>
     <lastmod>2025-03-13T20:43:58-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/pi-is-rational/pi-is-rational/</loc>
+    <loc>http://geoffmulberry.com/articles/pi-is-rational/pi-is-rational/</loc>
     <lastmod>2025-03-13T20:43:58-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</loc>
+    <loc>http://geoffmulberry.com/articles/inside-a-vacuum-tube/inside-a-vacuum-tube/</loc>
     <lastmod>2023-07-28T14:48:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://geoffmulberry.com/about/</loc>
     <lastmod>2023-07-26T15:17:10-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://geoffmulberry.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://geoffmulberry.com/tags/</loc>
   </url>
 </urlset>
